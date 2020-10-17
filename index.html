@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>keycode</title>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Grab key, code and keycode when you press a key" />
+  <meta name="keywords" content="HTML, CSS, JavaScript, keycode">
+  <meta name="author" content="Wenhe Qi">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: dodgerblue;
+      font-family: monospace;
+    }
+    #container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #title-container{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1vh 0;
+    }
+    #keycode-container {
+      padding: 50px;
+    }
+    #key, #code, #keycode{
+      font-size: 5vh;
+      color: whitesmoke;
+    }
+    #keycode {
+      font-size: 50vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="keycode-container">
+      <div id="title-container">
+        <div id="title-key-container">
+          <span id="key">--</span>
+        </div>
+        <div id="title-code-container">
+          <span id="code">--</span>
+        </div>
+      </div>
+      <span id="keycode">--</span>
+    </div>
+  </div>
+  <script>
+    const key = document.getElementById("key");
+    const code = document.getElementById("code");
+    const keycode = document.getElementById("keycode");
+
+    window.onkeydown = (event) => {
+      key.textContent = event.key;
+      code.textContent = event.code;
+      keycode.textContent = event.keyCode;
+    }
+  </script>
+</body>
+</html>
